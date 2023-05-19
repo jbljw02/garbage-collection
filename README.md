@@ -70,7 +70,7 @@ remove_unusedObjects()
 <h2>5. Garbage Collection에도 불구하고 메모리 누수가 발생하는 경우</h2>
 
 ```python
-# '순환 참조' 구조를 가지는 함수
+# 순환 참조 구조를 가지는 함수
 class Node:
     def __init__(self, value):
         self.value = value
