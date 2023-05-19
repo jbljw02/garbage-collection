@@ -68,3 +68,29 @@ remove_unusedObjects()
 <br>
 
 <h2>5. Garbage Collection에도 불구하고 메모리 누수가 발생하는 경우</h2>
+
+```python
+# '순환 참조' 구조를 가지는 함수
+class Node:
+    def __init__(self, value):
+        self.value = value
+        # 현재 노드가 다음 노드를 참조하지 않게 하여 메모리 누수 방지를 의도
+        self.next = None
+
+# 순환 참조 구조를 이루는 함수 생성
+def circular_reference():
+    node1 = Node(1)
+    node2 = Node(2)
+    # node1과 node2가 서로 참조하고 있으므로 GC의 대상 X
+    node1.next = node2
+    node2.next = node1
+    return node1, node2
+
+def main():
+    while True:
+        circular_reference()
+
+main()
+```
+
+<p>위 예제에서는 '순환 참조'로 인하여 메모리 누수가 발생합니다. 순환 참조란 서로 다른 요소들이 서로를 참조하는 현상을 말합니다. 위 코드에서는 "self.next = None"을 통해 현재 노드가 다음 노드를 참조하지 않게 했음에도 불구하고 'circular_reference()' 함수에서 'node1'과 'node2'가 서로를 참조하는 순환 참조가 발생합니다. Garbage Collector는 순환 참조된 객체들을 해제할 수 없으므로 메모리 누수가 발생하게 됩니다. 이런 경우에는 개발자가 사용하지 않는 객체를 명시적으로 참조 해제 해줘야 합니다.</p>
