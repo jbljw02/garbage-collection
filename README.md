@@ -63,7 +63,7 @@ def remove_unusedObjects():
 remove_unusedObjects()
 ```
 
-<p>위 예제에서는 'Person' 클래스를 정의하고 'remove_unusedObjects()' 함수를 이용하여 불필요한 객체 참조를 제거합니다. removed_unusedObjects() 함수 내에서는 person 객체를 생성했지만 실제로는 사용되지 않았으므로 참조를 해제한 것입니다. 이와 같이 불필요한 참조를 제거하면 Garbage Collector는 해당 객체를 도달할 수 없는 것으로 판단하고 메모리에서 해제합니다.</p>
+<p>위 예제에서는 'Person' 클래스를 정의하고 'remove_unusedObjects()' 함수를 이용하여 불필요한 객체 참조를 제거합니다. removed_unusedObjects() 함수 내에서는 person 객체를 생성했지만 실제로는 사용되지 않았으므로 참조를 해제한 것입니다. 이와 같이 불필요한 참조를 제거하면 Garbage Collector는 해당 객체를 도달 불가능한 것으로 판단하고 메모리에서 해제합니다.</p>
 
 <br>
 
