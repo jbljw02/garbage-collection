@@ -67,4 +67,4 @@ remove_unusedObjects()
 
 <br>
 
-<h2>5. Garbage Collection이 </h2>
+<h2>5. Garbage Collection에도 불구하고 메모리 누수가 발생하는 경우</h2>
